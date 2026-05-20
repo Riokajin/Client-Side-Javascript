@@ -26,10 +26,11 @@
 		const element = document.querySelector("em");
 		// STEP 3: Assign a click event listener to the above element, and include a reference to the function to be invoked
 		element.addEventListener("click", updateName);
-		// STEP 4: Create a function that waits for the above click event
+		// STEP 4: Creat a function that waits for the above click event
 		function updateName() {
 			// STEP 4a: Display a prompt asking for input, and assign the input to a variable using let
 			let firstName = prompt("What is your name?");
+			console.log(firstName);
 			// STEP 4b: Grab the input from the variable and build a new string, then change the text inside the EM element, using the textContent property
 			element.textContent = firstName;
 		}
@@ -38,4 +39,3 @@
 		// STEP 6: Move the above JavaScript into an external file and reference it with an empty SCRIPT element inside the HEAD element - be sure to add a defer attribute in the SCRIPT start tag
 
 		// This page inspired by and adapted from https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/What_is_JavaScript
-	
