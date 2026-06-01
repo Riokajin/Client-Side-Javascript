@@ -1,4 +1,5 @@
 // Arrays for each part of the story
+// Each array holds the different options the user can cycle through
 let characters = [
     "Cecil", 
     "Bartz", 
@@ -43,6 +44,7 @@ let endings = [
 ];
 
 // Index counters for cycling through each array
+// These keep track of which item is currently selected
 let charIndex = 0;
 let actionIndex = 0;
 let thingIndex = 0;
@@ -50,6 +52,7 @@ let locationIndex = 0;
 let endingIndex = 0;
 
 // Grab all the buttons and output spans from the page
+// These let us update the text beside each button
 const charBtn = document.querySelector("#charBtn");
 const actionBtn = document.querySelector("#actionBtn");
 const thingBtn = document.querySelector("#thingBtn");
@@ -64,6 +67,9 @@ const endingOut = document.querySelector("#endingOut");
 
 const showStoryBtn = document.querySelector("#showStoryBtn");
 const storyOutput = document.querySelector("#storyOutput");
+
+// Button for generating a random story
+const randomBtn = document.querySelector("#randomBtn");
 
 // Cycle through the characters array
 charBtn.addEventListener("click", function() {
@@ -109,7 +115,31 @@ endingBtn.addEventListener("click", function() {
     }
     endingOut.textContent = endings[endingIndex];
 });
+
+// Pick a random item from each array and show the story
+randomBtn.addEventListener("click", function() {
+    // Generate random indexes for each array
+    charIndex = Math.floor(Math.random() * characters.length);
+    actionIndex = Math.floor(Math.random() * actions.length);
+    thingIndex = Math.floor(Math.random() * things.length);
+    locationIndex = Math.floor(Math.random() * locations.length);
+    endingIndex = Math.floor(Math.random() * endings.length);
+
+    // Update the spans so the user sees the chosen words
+    charOut.textContent = characters[charIndex];
+    actionOut.textContent = actions[actionIndex];
+    thingOut.textContent = things[thingIndex];
+    locationOut.textContent = locations[locationIndex];
+    endingOut.textContent = endings[endingIndex];
+
+    // Build the final story
+    storyOutput.textContent = 
+    `${characters[charIndex]} ${actions[actionIndex]} ${things[thingIndex]} ${locations[locationIndex]} ${endings[endingIndex]}`;
+});
+
+
 // Build the final story using template literals
+// This uses whatever options the user has selected
 showStoryBtn.addEventListener("click", function() {
     storyOutput.textContent = 
     `${characters[charIndex]} ${actions[actionIndex]} ${things[thingIndex]} ${locations[locationIndex]} ${endings[endingIndex]}`;
