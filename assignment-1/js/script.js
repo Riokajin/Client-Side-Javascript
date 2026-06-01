@@ -42,9 +42,6 @@ let endings = [
     "because chaos demanded it."
 ];
 
-storyOutput.textContent = 
-    `${characters[charIndex]} ${actions[actionIndex]} ${things[thingIndex]} ${locations[locationIndex]} ${endings[endingIndex]}`;
-
 // Index counters for cycling through each array
 let charIndex = 0;
 let actionIndex = 0;
@@ -63,7 +60,57 @@ const charOut = document.querySelector("#charOut");
 const actionOut = document.querySelector("#actionOut");
 const thingOut = document.querySelector("#thingOut");
 const locationOut = document.querySelector("#locationOut");
-const engingOut = document.querySelector("#endingOut");
+const endingOut = document.querySelector("#endingOut");
 
 const showStoryBtn = document.querySelector("#showStoryBtn");
 const storyOutput = document.querySelector("#storyOutput");
+
+// Cycle through the characters array
+charBtn.addEventListener("click", function() {
+    charIndex++;
+    if (charIndex >= characters.length) {
+        charIndex = 0; // wrap back to start
+    }
+    charOut.textContent = characters[charIndex];
+});
+
+// Cycle through the actions array
+actionBtn.addEventListener("click", function() {
+    actionIndex++;
+    if (actionIndex >= actions.length) {
+        actionIndex = 0;
+    }
+    actionOut.textContent = actions[actionIndex];
+});
+
+// Cycle through the things array
+thingBtn.addEventListener("click", function() {
+    thingIndex++;
+    if (thingIndex >= things.length) {
+        thingIndex = 0;
+    }
+    thingOut.textContent = things[thingIndex];
+});
+
+// Cycle through the locations array
+locationBtn.addEventListener("click", function() {
+    locationIndex++;
+    if (locationIndex >= locations.length) {
+        locationIndex = 0;
+    }
+    locationOut.textContent = locations[locationIndex];
+});
+
+// Cycle through the endings array
+endingBtn.addEventListener("click", function() {
+    endingIndex++;
+    if (endingIndex >= endings.length) {
+        endingIndex = 0;
+    }
+    endingOut.textContent = endings[endingIndex];
+});
+// Build the final story using template literals
+showStoryBtn.addEventListener("click", function() {
+    storyOutput.textContent = 
+    `${characters[charIndex]} ${actions[actionIndex]} ${things[thingIndex]} ${locations[locationIndex]} ${endings[endingIndex]}`;
+});
