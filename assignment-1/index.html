@@ -7,45 +7,53 @@
         <script src="js/script.js" defer></script>
     </head>
     <body>
-        <h1>Story Generator</h1>
 
-        <!-- Button and output for choosing the character -->
-        <div>
-            <button id="charBtn">Character</button>
-            <span id="charOut"></span>
+        <div id="backgroundWrapper">
+            <h1>Story Generator</h1>
+
+            <!-- Game Logo (reactive) -->
+             <div id="logoContainer">
+                <img id="gameLogo" src="" alt="Game Logo">
+             </div>
+            
+            <!-- Button and output for choosing the character -->
+            <div>
+                <button id="charBtn">Character</button>
+                <span id="charOut"></span>
+            </div>
+
+            <!-- Button and output for choosing the action -->
+            <div>
+                <button id="actionBtn">Action</button>
+                <span id="actionOut"></span>
+            </div>
+
+            <!-- Button and output for choosing the thing (descriptor + noun) -->
+            <div>
+                <button id="thingBtn">Thing</button>
+                <span id="thingOut"></span>
+            </div>
+            
+            <!-- Button and output for choosing the location -->
+            <div>
+                <button id="locationBtn">Location</button>
+                <span id="locationOut"></span>
+            </div>
+
+            <!-- Button and output for choosing the ending -->
+            <div>
+                <button id="endingBtn">Ending</button>
+                <span id="endingOut"></span>
+            </div>
+
+            <!-- Button that builds and displays the final story -->
+            <button id="showStoryBtn">Show Story</button>
+
+            <!-- Button that picks a random item from each array -->
+            <button id="randomBtn">Random Story</button>
+
+            <!-- Paragraph where the completed story will appear -->
+            <p id="storyOutput"></p>
         </div>
-
-        <!-- Button and output for choosing the action -->
-        <div>
-            <button id="actionBtn">Action</button>
-            <span id="actionOut"></span>
-        </div>
-
-        <!-- Button and output for choosing the thing (descriptor + noun) -->
-        <div>
-            <button id="thingBtn">Thing</button>
-            <span id="thingOut"></span>
-        </div>
-        
-        <!-- Button and output for choosing the location -->
-        <div>
-            <button id="locationBtn">Location</button>
-            <span id="locationOut"></span>
-        </div>
-
-        <!-- Button and output for choosing the ending -->
-        <div>
-            <button id="endingBtn">Ending</button>
-            <span id="endingOut"></span>
-        </div>
-
-        <!-- Button that builds and displays the final story -->
-        <button id="showStoryBtn">Show Story</button>
-
-        <!-- Button that picks a random item from each array -->
-        <button id="randomBtn">Random Story</button>
-
-        <!-- Paragraph where the completed story will appear -->
-        <p id="storyOutput"></p>
     </body>
 </html>
