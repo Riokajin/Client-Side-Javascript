@@ -12,38 +12,101 @@
             <h1>Story Generator</h1>
 
             <!-- Game Logo (reactive) -->
+            <!-- a default valid invisible png -->
              <div id="logoContainer">
-                <img id="gameLogo" src="" alt="Game Logo">
+                <img id="gameLogo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKJXcAAAAASUVORK5CYII=" alt="Game Logo">
              </div>
             
-            <!-- Button and output for choosing the character -->
-            <div>
+            <!-- Character Section -->
+            <div class="section">
                 <button id="charBtn">Character</button>
                 <span id="charOut"></span>
+
+                <button id="randomCharBtn">Random Character</button>
+            
+                <!-- Character Subsection Buttons -->
+                 <!-- learned from https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes -->
+                <div class="subButtons" id="charSubButtons">
+                    <button data-game="ff1">FF1</button>
+                    <button data-game="ff2">FF2</button>
+                    <button data-game="ff3">FF3</button>
+                    <button data-game="ff4">FF4</button>
+                    <button data-game="ff5">FF5</button>
+                    <button data-game="ff6">FF6</button>
+                    <button data-game="ff7">FF7</button>
+                    <button data-game="ff8">FF8</button>
+                    <button data-game="ff9">FF9</button>
+                    <button data-game="ff10">FF10</button>
+                    <button data-game="ff12">FF12</button>
+                    <button data-game="ff13">FF13</button>
+                    <button data-game="ff15">FF15</button>
+                    <button data-game="ff16">FF16</button>
+                </div>
             </div>
 
-            <!-- Button and output for choosing the action -->
-            <div>
+            <!-- Action Section -->
+            <div class="section">
                 <button id="actionBtn">Action</button>
                 <span id="actionOut"></span>
+
+                <button id="randomActionBtn">Random Action</button>
             </div>
 
-            <!-- Button and output for choosing the thing (descriptor + noun) -->
-            <div>
+            
+
+            <!-- Thing Section -->
+            <div class="section">
                 <button id="thingBtn">Thing</button>
                 <span id="thingOut"></span>
+
+                <button id="randomThingBtn">Random Thing</button>
             </div>
             
-            <!-- Button and output for choosing the location -->
-            <div>
+            <!-- Location Section -->
+            <div class="section">
                 <button id="locationBtn">Location</button>
                 <span id="locationOut"></span>
+
+                <button id="randomLocationBtn">Random Location</button>
+
+                <!-- Location Subsection Buttons -->
+                <div class="subButtons" id="locationSubButtons">
+                    <button data-game="ff1">FF1</button>
+                    <button data-game="ff2">FF2</button>
+                    <button data-game="ff3">FF3</button>
+                    <button data-game="ff4">FF4</button>
+                    <button data-game="ff5">FF5</button>
+                    <button data-game="ff6">FF6</button>
+                    <button data-game="ff7">FF7</button>
+                    <button data-game="ff8">FF8</button>
+                    <button data-game="ff9">FF9</button>
+                    <button data-game="ff10">FF10</button>
+                    <button data-game="ff12">FF12</button>
+                    <button data-game="ff13">FF13</button>
+                    <button data-game="ff15">FF15</button>
+                    <button data-game="ff16">FF16</button>
+                </div>
             </div>
 
-            <!-- Button and output for choosing the ending -->
-            <div>
+            <!-- Ending Section -->
+            <div class="section">
                 <button id="endingBtn">Ending</button>
                 <span id="endingOut"></span>
+
+                <button id="randomEndingBtn">Random Ending</button>
+
+                <!-- Ending Subsection Buttons -->
+                <div class="subButtons" id="endingSubButtons">
+                    <button data-game="universal">Universal</button>
+                    <button data-game="cute">Cute</button>
+                    <button data-game="silly">Silly</button>
+                    <button data-game="scary">Scary</button>
+                    <button data-game="serious">Serious</button>
+                    <button data-game="chaotic">Chaotic</button>
+                    <button data-game="gilgamesh">Gilgamesh</button>
+                    <button data-game="villain">Villain</button>
+                    <button data-game="ffthemed">FF-Themed</button>
+                </div>
             </div>
 
             <!-- Button that builds and displays the final story -->
@@ -55,5 +118,6 @@
             <!-- Paragraph where the completed story will appear -->
             <p id="storyOutput"></p>
         </div>
+        <p>All logos sourced from <a>https://finalfantasy.fandom.com/wiki/Logos_of_Final_Fantasy</a></p>
     </body>
 </html>

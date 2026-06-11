@@ -1,10 +1,47 @@
 // Arrays for each part of the story
-// Each array holds the different options the user can cycle through
-let characters = [
+// Each array holds the different options the user can cycle through with sub-arrays to make it easier to go through categories with more buttons
+
+// FF1
+let charactersFF1 = [
     "The warrior of light",
+    "Black Mage",
+    "white Mage",
+    "Red Mage",
+    "Monk",
+    "Thief",
+    "Knight",
+    "Ninja",
+    "Black Wizard",
+    "White Wizard",
+    "Red Wizard",
+    "Master",
+    "Princess Sarah",
+    "King of Cornelia"
+];
+
+// FF2
+let charactersFF2 = [
     "Firion",
     "Maria",
     "Guy",
+    "Leon",
+    "Minwu",
+    "Josef",
+    "Gordon",
+    "Leila",
+    "Ricard Highwind"
+];
+
+// FF3
+let charactersFF3 = [
+    "Luneth",
+    "Arc",
+    "Refia",
+    "Ingus"
+];
+
+// FF4
+let charactersFF4 = [
     "Cecil",
     "Kain",
     "Rosa",
@@ -14,13 +51,20 @@ let characters = [
     "Porom",
     "Tellah",
     "Cid",
-    "Tellah",
-    "Edward",
+    "Edward"
+];
+
+// FF5
+let charactersFF5 = [
     "Bartz",
     "Lenna",
     "Galuf",
     "Faris",
-    "Krile", 
+    "Krile"
+];
+
+// FF6
+let charactersFF6 = [
     "Terra",
     "Locke",
     "Edgar",
@@ -34,7 +78,11 @@ let characters = [
     "Relm",
     "Mog",
     "Gogo",
-    "Umaro",
+    "Umaro"
+];
+
+// FF7
+let charactersFF7 = [
     "Cloud",
     "Barret",
     "Tifa",
@@ -44,13 +92,21 @@ let characters = [
     "Cait Sith",
     "Vincent",
     "Cid",
-    "Zack",
+    "Zack"
+];
+
+// FF8
+let charactersFF8 = [
     "Squall",
     "Rinoa",
     "Quistis",
     "Zell",
     "Selphie",
-    "Irvine",
+    "Irvine"
+];
+
+// FF9
+let charactersFF9 = [
     "Zidane",
     "Garnet",
     "Dagger",
@@ -59,47 +115,66 @@ let characters = [
     "Freya",
     "Quina",
     "Eiko",
-    "Amarant",
+    "Amarant"
+];
+
+// FF10
+let charactersFF10 = [
     "Tidus",
     "Yuna",
     "Auron",
     "Wakka",
     "Lulu",
     "Kimahri",
-    "Rikku",
+    "Rikku"
+];
+
+// FF12
+let charactersFF12 = [
     "Vaan",
     "Penelo",
     "Ashe",
     "Balthier",
     "Fran",
-    "Basch",
+    "Basch"
+];
+
+// FF13
+let charactersFF13 = [
     "Lightning",
     "Snow",
     "Sazh",
     "Hope",
     "Vanille",
-    "Fang",
+    "Fang"
+];
+
+// FF15
+let charactersFF15 = [
     "Noctis",
     "Gladiolus",
     "Ignis",
-    "Prompto",
+    "Prompto"
+];
+
+// FF16
+let charactersFF16 = [
     "Clive",
     "Torgal",
     "Jill",
     "Cid",
     "Joshua",
     "Byron",
-    "Dion",
+    "Dion"
 ];
 
-let actions = [
+// Basic Actions
+let actionsBasic = [
     "attempted to cook with",
     "tried to negotiate with",
     "got into an argument with",
     "performed a ritual around",
-    "accidentally summoned",
-    "tripped over", 
-    "cast a spell at",
+    "tripped over",
     "attempted to repair",
     "stared intensely at",
     "ran away from",
@@ -107,9 +182,6 @@ let actions = [
     "took a selfie with",
     "attempted to recruit",
     "warned everyone about",
-    "accidentally healed",
-    "launched a surprise attack on",
-    "studied the behaviour of",
     "complained loudly about",
     "tried to hide behind",
     "attempted to ride",
@@ -119,30 +191,16 @@ let actions = [
     "glared suspiciously at",
     "challenged to a duel",
     "sang a song to",
-    "tried to steal from", 
-    "attempted to communicate with",
+    "tried to steal from",
     "ran circles around",
     "took notes about",
-    "attempted to fuse with",
     "declared eternal rivalry with",
-    "failed a limit break on",
-    "triggered a random encounter with",
-    "ran out of MP while trying to cast at",
-    "opened a trapped treasure chest containing",
-    "got KO'd by",
-    "lost a Triple Triad match to",
-    "failed a blitzball pass toward",
-    "accidentally triggered a boss phase change in",
-    "got wiped by a status effect from",
-    "grinded for hours trying to farm",
-    "attempted to junction magic onto",
-    "got one-shot by level 5 Death from",
-    "attempted to pilot an airship into",
-    "hit their limit because of",
+    "attempted to bribe"
+];
+
+// Chaotic Actions
+let actionsChaotic = [
     "mis-timed a QTE and angered",
-    "accidentally cast Reflect on",
-    "got ambushed during a long hallway by",
-    "attempted to brew a potion using",
     "got stuck in an unskippable cutscene involving",
     "got confused and attacked",
     "equipped a cursed accessory on",
@@ -150,14 +208,54 @@ let actions = [
     "failed to dodge",
     "triggered a cutscene by examining",
     "activated a trap set by",
-    "attempted to decipher ancient glyphs about",
     "got lost in a side-quest chain involving",
-    "attempted to bribe",
-    "tried to synthesize an item using",
     "failed to escape a battle started by"
 ];
 
-let things = [
+// Battle Actions
+let actionsBattle = [
+    "launched a surprise attack on",
+    "got KO'd by",
+    "failed a limit break on",
+    "triggered a random encounter with",
+    "got wiped by a status effect from",
+    "got one-shot by level 5 Death from",
+    "hit their limit because of"
+];
+
+// Arcane Actions
+let actionsArcane = [
+    "accidentally summoned",
+    "cast a spell at",
+    "accidentally healed",
+    "attempted to fuse with",
+    "ran out of MP while trying to cast at",
+    "attempted to brew a potion using",
+    "attempted to decipher ancient glyphs about",
+    "attempted to junction magic onto",
+    "accidentally cast Reflect on"
+];
+
+// Adventure Actions
+let actionsAdventure = [
+    "attempted to communicate with",
+    "opened a trapped treasure chest containing",
+    "lost a Triple Triad match to",
+    "failed a blitzball pass toward",
+    "attempted to pilot an airship into",
+    "got ambushed during a long hallway by",
+    "tried to synthesize an item using"
+];
+
+// System Actions
+let actionsSystem = [
+    "studied the behaviour of",
+    "grinded for hours trying to farm",
+    "accidentally triggered a boss phase change in"
+];
+
+// Moogle Stuff
+let thingsMoogle = [
     "A moogle",
     "a confused moogle",
     "a sleepy moogle",
@@ -166,8 +264,11 @@ let things = [
     "a moogle charm",
     "a moogle timepiece",
     "a moogle cookie with uneven icing",
-    "a moogle statue that judges you",
+    "a moogle statue that judges you"
+];
 
+// Chocobo Stuff
+let thingsChocobo = [
     "a chocobo",
     "a baby chocobo",
     "a timid chocobo",
@@ -176,8 +277,11 @@ let things = [
     "a chocobo whistle",
     "a chocobo kazoo",
     "a chocobo brush missing half its bristles",
-    "a chocobo statue leaning slightly forward",
+    "a chocobo statue leaning slightly forward"
+];
 
+// Cactuar Stuff
+let thingsCactuar = [
     "a cactuar",
     "a tiny cactuar",
     "a suspicious cactuar",
@@ -185,14 +289,20 @@ let things = [
     "a cactuar that refuses to face forward",
     "a cactuar doll frozen mid-scream",
     "a single cactuar needle",
-    "a cactuar fountain that sprays unpredictably",
+    "a cactuar fountain that sprays unpredictably"
+];
 
+// Tonberry Stuff
+let thingsTonberry = [
     "a tonberry",
     "a very lost tonberry",
     "a suspiciously confident tonberry",
     "a tonberry lantern",
-    "a tonberry holding a moogle as a lantern",
+    "a tonberry holding a moogle as a lantern"
+];
 
+// Monster Stuff
+let thingsMonsters = [
     "a bomb",
     "a territorial bomb",
     "a defensive mombomb",
@@ -212,16 +322,22 @@ let things = [
 
     "a prowling coeurl",
     "a shy sahagin",
-    "a wondering golem",
+    "a wondering golem"
+];
 
+// Oddities (Mimics + Treasure Chests)
+let thingsOddities = [
     "a mimic",
     "a startled mimic",
     "a mimic pretending to be a worse mimic",
     "an ordinary chest disguised as a mimic",
     "a treasure chest",
     "a treasure chest that keeps twitching",
-    "a treasure chest that keeps trying to open itself",
+    "a treasure chest that keeps trying to open itself"
+];
 
+// Item Stuff
+let thingsItems = [
     "a phoenix down",
     "a phoenix down that won't stop glowing",
 
@@ -238,8 +354,9 @@ let things = [
     "a cracked magicite shard"
 ];
 
-let locations = [
-    // FF1
+
+// FF1
+let locationsFF1 = [
     "in Cornelia",
     "in Provoka",
     "in Elfheim",
@@ -258,9 +375,11 @@ let locations = [
     "in the Citadel of Trials",
     "in the Western Keep",
     "in the Marsh Cave",
-    "in the Ryukahn Desert",
+    "in the Ryukahn Desert"
+];
 
-    // FF2
+// FF2
+let locationsFF2 = [
     "in Altair",
     "in Fynn",
     "in Gatrea",
@@ -283,9 +402,11 @@ let locations = [
     "at the Mysidian Tower",
     "at the Tropical Island",
     "on the Leviathan",
-    "on the Desert of Palamecia",
+    "on the Desert of Palamecia"
+];
 
-    // FF3
+// FF3
+let locationsFF3 = [
     "in Ur",
     "in Kazus",
     "in Canaan",
@@ -323,9 +444,11 @@ let locations = [
     "inside the Cave of the Ancients",
     "on the Invincible",
     "on the Enterprise",
-    "on the Nautilus",
+    "on the Nautilus"
+];
 
-    // FF4
+// FF4
+let locationsFF4 = [
     "in Baron",
     "in Mist Village",
     "in Kaipo",
@@ -358,9 +481,11 @@ let locations = [
     "in the Underworld",
     "in the Lunar Subterrane",
     "inside the Crystal Palace",
-    "inside the Lunar Core",
+    "inside the Lunar Core"
+];
 
-    // FF5
+// FF5
+let locationsFF5 = [
     "in Tule",
     "in Carwen",
     "in Walse",
@@ -400,9 +525,11 @@ let locations = [
     "inside the Great Sea Trench",
     "inside the Fork Tower",
     "inside the Void",
-    "in the Cleft of Dimension",
+    "in the Cleft of Dimension"
+];
 
-    // FF6
+// FF6
+let locationsFF6 = [
     "in Narshe",
     "at Figaro Castle",
     "in South Figaro",
@@ -434,9 +561,11 @@ let locations = [
     "in the Zone Eater",
     "in the Yeti's Cave",
     "in the Dragon's Neck Coliseum",
-    "inside Kefka's Tower",
+    "inside Kefka's Tower"
+];
 
-    // FF7
+// FF7
+let locationsFF7 = [
     "in Midgar",
     "in Sector 1",
     "in Sector 5",
@@ -480,9 +609,11 @@ let locations = [
     "underwater at the Sea Floor",
     "inside the Sunken Gelnika",
     "inside the Ancient Forest",
-    "inside the Round Island Cave",
+    "inside the Round Island Cave"
+];
 
-    // FF8
+// FF8
+let locationsFF8 = [
     "in Balamb Garden",
     "in Galbadia Garden",
     "in Trabia Garden",
@@ -510,9 +641,11 @@ let locations = [
     "inside the Lunar Base",
     "inside the Ragnarok",
     "inside Ultimecia's Castle",
-    "inside the Time Compression Realm",
+    "inside the Time Compression Realm"
+];
 
-    // FF9
+// FF9
+let locationsFF9 = [
     "in Alexandria",
     "inside Alexandria Castle",
     "in the Theater District",
@@ -551,9 +684,11 @@ let locations = [
     "in Pandemonium",
     "on Terra",
     "inside Memoria",
-    "inside the Crystal World",
+    "inside the Crystal World"
+];
 
-    // FF10
+// FF10
+let locationsFF10 = [
     "in Dream Zanarkand",
     "in the Ruins of Zanarkand",
     "in Besaid Village",
@@ -582,9 +717,11 @@ let locations = [
     "inside the Dome of the Fayth",
     "inside Sin",
     "in the City of Dying Dreams",
-    "inside the Final Aeon Chamber",
+    "inside the Final Aeon Chamber"
+];
 
-    // FF12
+// FF12
+let locationsFF12 = [
     "in Rabanastre",
     "inside the Royal Palace of Rabanastre",
     "in Lowtown",
@@ -615,9 +752,10 @@ let locations = [
     "inside the Great Crystal",
     "inside the Pharos at Ridorana",
     "inside the Ridorana Cataract",
-    "inside the Sky Fortress Bahamut",
-
-    // FF13
+    "inside the Sky Fortress Bahamut"
+];
+// FF13
+let locationsFF13 = [
     "in Bodhum",
     "in the Hanging Edge",
     "inside the Pulse Vestige",
@@ -638,9 +776,11 @@ let locations = [
     "inside the Oerba Village",
     "inside Orphan's Cradle",
     "inside the Narthex",
-    "inside the Prologue Pathways",
+    "inside the Prologue Pathways"
+];
 
-    // FF15
+// FF15
+let locationsFF15 = [
     "in Insomnia",
     "inside the Citadel",
     "in the Crown City Underground",
@@ -669,9 +809,11 @@ let locations = [
     "in the Formouth Garrison",
     "inside the Astral Realm",
     "in the Pitioss Ruins",
-    "inside the World of Ruin Insomnia",
+    "inside the World of Ruin Insomnia"
+];
 
-    // FF16
+// FF16
+let locationsFF16 = [
     "in Rosaria",
     "inside Phoenix Gate",
     "in Martha's Rest",
@@ -702,8 +844,8 @@ let locations = [
     "inside the Heart of Origin"
 ];
 
-let endings = [
-    // universal
+// Universal
+let endingsUniversal = [
     "for absolutely no reason.",
     "and nobody learned anything.",
     "while everyone watched.",
@@ -720,9 +862,11 @@ let endings = [
     "and the universe politely looked away.",
     "and the winds carried the rumor across continents.",
     "and the stars pretended not to notice.",
-    "and the moment was immediately forgotten by everyone except one flan.",
+    "and the moment was immediately forgotten by everyone except one flan."
+];
 
-    // cute endings
+// Cute
+let endingsCute = [
     "and the moogle gave a tiny cheer.",
     "and a chocobo immediately adopted them.",
     "and the cactuar posed proudly.",
@@ -744,9 +888,11 @@ let endings = [
     "and the sylphs declared them friend-shaped.",
     "and a baby malboro tried to give them a flower.",
     "and a tiny tonberry offered them a lantern glow of approval.",
-    "and the faeries whispered compliments about their bravery.",
+    "and the faeries whispered compliments about their bravery."
+];
 
-    // silly endings
+// Silly
+let endingsSilly = [
     "and then immediately tripped over a tonberry.",
     "and the behemoth just sighed.",
     "and the cactuar fled at Mach 3.",
@@ -772,9 +918,11 @@ let endings = [
     "and the malboro tried to give unsolicited advice.",
     "and the bomb enemy exploded out of sheer excitement.",
     "and the goblins started a betting pool.",
-    "and the cactuar attempted a victory dance and fell over.",
+    "and the cactuar attempted a victory dance and fell over."
+];
 
-    // scary / ominous endings
+// Scary / Ominous
+let endingsScary = [
     "and the shadows whispered their name.",
     "and something ancient stirred.",
     "and the crystal dimmed in warning.",
@@ -797,9 +945,11 @@ let endings = [
     "and the airship instruments all went silent at once.",
     "and the world seemed to hold its breath in fear.",
     "and the light flickered as if afraid.",
-    "and the darkness answered.",
+    "and the darkness answered."
+];
 
-    // serious / dramatic endings
+// Serious / Dramatic
+let endingsSerious = [
     "and history would remember it differently.",
     "and the world shifted ever so slightly.",
     "and a new legend quietly began.",
@@ -820,9 +970,11 @@ let endings = [
     "and the winds carried their story far beyond the horizon.",
     "and the land itself seemed grateful.",
     "and the sky opened in quiet approval.",
-    "and the future changed in that moment.",
+    "and the future changed in that moment."
+];
 
-    // chaotic endings
+// Chaotic
+let endingsChaotic = [
     "and the universe politely asked them to stop.",
     "and reality took 5d6 psychic damage.",
     "and the timeline folded itself in half.",
@@ -845,9 +997,11 @@ let endings = [
     "and the world glitched for dramatic effect.",
     "and the battle theme started playing for no reason.",
     "and the universe soft-locked.",
-    "and the laws of causality took a coffee break.",
+    "and the laws of causality took a coffee break."
+];
 
-    // Gilgamesh
+// Greg / Gilgamesh
+let endingsGreg = [
     "and Gilgamesh stole their weapon mid-sentence.",
     "and Greg declared it 'a worthy duel!'",
     "and Gilgamesh tripped into another dimension again.",
@@ -869,9 +1023,11 @@ let endings = [
     "and Gilgamesh shouted 'THIS WILL MAKE A FINE TALE!'.",
     "and Greg tried to autograph their weapon.",
     "and Gilgamesh declared them his new rival without asking.",
-    "and Greg attempted a heroic pose and pulled something.",
+    "and Greg attempted a heroic pose and pulled something."
+];
 
-    // Villain
+// Villain
+let endingsVillain = [
     "and Kefka laughed way too hard about it.",
     "and Sephiroth appeared for no discernible reason.",
     "and Ultimecia whispered 'time... compresses...'.",
@@ -910,9 +1066,11 @@ let endings = [
     "and Barthandelus monologued for several minutes about this moment.",
     "and Ifrit glared with fiery disdain.",
     "and Barnabas smiled in unsettling approval.",
-    "and Ultima whispered that this was 'inevitable.'.",
+    "and Ultima whispered that this was 'inevitable.'."
+];
 
-    // FF Themed universal endings
+// FF-Themed Universal
+let endingsFFThemed = [
     "and the crystal chose violence.",
     "and the summon refused to comment.",
     "and the airship crew pretended it was normal.",
@@ -921,7 +1079,120 @@ let endings = [
     "and the chocobo sensed EXP potential.",
     "and the crystal hummed in approval.",
     "and the void whispered 'not bad'.",
-    "and the airship autopilot refused to engage afterward.",
+    "and the airship autopilot refused to engage afterward."
+];
+
+// Grouping arrays into objects to they can be easily accessed.
+const characters = {
+    ff1: charactersFF1,
+    ff2: charactersFF2,
+    ff3: charactersFF3,
+    ff4: charactersFF4,
+    ff5: charactersFF5,
+    ff6: charactersFF6,
+    ff7: charactersFF7,
+    ff8: charactersFF8,
+    ff9: charactersFF9,
+    ff10: charactersFF10,
+    ff12: charactersFF12,
+    ff13: charactersFF13,
+    ff15: charactersFF15,
+    ff16: charactersFF16
+};
+
+const locations = {
+    ff1: locationsFF1,
+    ff2: locationsFF2,
+    ff3: locationsFF3,
+    ff4: locationsFF4,
+    ff5: locationsFF5,
+    ff6: locationsFF6,
+    ff7: locationsFF7,
+    ff8: locationsFF8,
+    ff9: locationsFF9,
+    ff10: locationsFF10,
+    ff12: locationsFF12,
+    ff13: locationsFF13,
+    ff15: locationsFF15,
+    ff16: locationsFF16
+};
+
+const endings = {
+    universal: endingsUniversal,
+    cute: endingsCute,
+    silly: endingsSilly,
+    scary: endingsScary,
+    serious: endingsSerious,
+    chaotic: endingsChaotic,
+    gilgamesh: endingsGreg,
+    villain: endingsVillain,
+    ffthemed: endingsFFThemed
+};
+
+//mega arrays to use for random buttons, made with the ... spread operator.
+const allCharacters = [
+    ...charactersFF1,
+    ...charactersFF2,
+    ...charactersFF3,
+    ...charactersFF4,
+    ...charactersFF5,
+    ...charactersFF6,
+    ...charactersFF7,
+    ...charactersFF8,
+    ...charactersFF9,
+    ...charactersFF10,
+    ...charactersFF12,
+    ...charactersFF13,
+    ...charactersFF15,
+    ...charactersFF16
+];
+
+const allActions = [
+    ...actionsBasic,
+    ...actionsChaotic,
+    ...actionsBattle,
+    ...actionsArcane,
+    ...actionsAdventure,
+    ...actionsSystem
+];
+
+const allThings = [
+    ...thingsMoogle,
+    ...thingsChocobo,
+    ...thingsCactuar,
+    ...thingsTonberry,
+    ...thingsMonsters,
+    ...thingsOddities,
+    ...thingsItems
+];
+
+const allLocations = [
+    ...locationsFF1,
+    ...locationsFF2,
+    ...locationsFF3,
+    ...locationsFF4,
+    ...locationsFF5,
+    ...locationsFF6,
+    ...locationsFF7,
+    ...locationsFF8,
+    ...locationsFF9,
+    ...locationsFF10,
+    ...locationsFF12,
+    ...locationsFF13,
+    ...locationsFF15,
+    ...locationsFF16
+];
+
+const allEndings = [
+    ...endingsUniversal,
+    ...endingsCute,
+    ...endingsSilly,
+    ...endingsScary,
+    ...endingsSerious,
+    ...endingsChaotic,
+    ...endingsGreg,
+    ...endingsVillain,
+    ...endingsFFThemed
 ];
 
 
@@ -953,70 +1224,132 @@ const storyOutput = document.querySelector("#storyOutput");
 // Button for generating a random story
 const randomBtn = document.querySelector("#randomBtn");
 
-// Cycle through the characters array
+// Random button selectors
+const randomCharBtn = document.querySelector("#randomCharBtn");
+const randomActionBtn = document.querySelector("#randomActionBtn");
+const randomThingBtn = document.querySelector("#randomThingBtn");
+const randomLocationBtn = document.querySelector("#randomLocationBtn");
+const randomEndingBtn = document.querySelector("#randomEndingBtn");
+
+// Utility: pick a random item from any array
+function pickRandom(arr) {
+    return arr[Math.floor(Math.random() * arr.length)];
+}
+
+// Utility: update the game logo based on selected game
+function updateGameLogo(game) {
+    const logo = document.getElementById("gameLogo");
+    logo.src = `img/${game}.png`; // expects img/ff7.png etc.
+}
+
+// Character Subsection (Event Delegation)
+document.getElementById("charSubButtons").addEventListener("click", (event) => {
+    if (event.target.tagName !== "BUTTON") return;
+
+    const game = event.target.dataset.game; // "ff7"
+    charOut.textContent = pickRandom(characters[game]);
+    updateGameLogo(game);
+});
+
+// Location Subsection
+document.getElementById("locationSubButtons").addEventListener("click", (event) => {
+    if (event.target.tagName !== "BUTTON") return;
+
+    const game = event.target.dataset.game;
+    locationOut.textContent = pickRandom(locations[game]);
+    updateGameLogo(game);
+});
+
+// Ending Subsection
+document.getElementById("endingSubButtons").addEventListener("click", (event) => {
+    if (event.target.tagName !== "BUTTON") return;
+
+    const type = event.target.dataset.game;
+    endingOut.textContent = pickRandom(endings[type]);
+});
+
+
+// Cycle through the FF1 characters by default
 charBtn.addEventListener("click", function() {
     charIndex++;
-    if (charIndex >= characters.length) {
+    if (charIndex >= charactersFF1.length) {
         charIndex = 0; // wrap back to start
     }
-    charOut.textContent = characters[charIndex];
+    charOut.textContent = charactersFF1[charIndex];
 });
 
-// Cycle through the actions array
+// Cycle through basic actions
 actionBtn.addEventListener("click", function() {
     actionIndex++;
-    if (actionIndex >= actions.length) {
+    if (actionIndex >= actionsBasic.length) {
         actionIndex = 0;
     }
-    actionOut.textContent = actions[actionIndex];
+    actionOut.textContent = actionsBasic[actionIndex];
 });
 
-// Cycle through the things array
+// Cycle through the moogle things by default
 thingBtn.addEventListener("click", function() {
     thingIndex++;
-    if (thingIndex >= things.length) {
+    if (thingIndex >= thingsMoogle.length) {
         thingIndex = 0;
     }
-    thingOut.textContent = things[thingIndex];
+    thingOut.textContent = thingsMoogle[thingIndex];
 });
 
-// Cycle through the locations array
+// Cycle through FF1 locations by default
 locationBtn.addEventListener("click", function() {
     locationIndex++;
-    if (locationIndex >= locations.length) {
+    if (locationIndex >= locationsFF1.length) {
         locationIndex = 0;
     }
-    locationOut.textContent = locations[locationIndex];
+    locationOut.textContent = locationsFF1[locationIndex];
 });
 
-// Cycle through the endings array
+// Cycle through universal endings by default
 endingBtn.addEventListener("click", function() {
     endingIndex++;
-    if (endingIndex >= endings.length) {
+    if (endingIndex >= endingsUniversal.length) {
         endingIndex = 0;
     }
-    endingOut.textContent = endings[endingIndex];
+    endingOut.textContent = endingsUniversal[endingIndex];
 });
 
 // Pick a random item from each array and show the story
 randomBtn.addEventListener("click", function() {
     // Generate random indexes for each array
-    charIndex = Math.floor(Math.random() * characters.length);
-    actionIndex = Math.floor(Math.random() * actions.length);
-    thingIndex = Math.floor(Math.random() * things.length);
-    locationIndex = Math.floor(Math.random() * locations.length);
-    endingIndex = Math.floor(Math.random() * endings.length);
+    charOut.textContent = pickRandom(allCharacters);
+    actionOut.textContent = pickRandom(allActions);
+    thingOut.textContent = pickRandom(allThings);
+    locationOut.textContent = pickRandom(allLocations)
+    endingOut.textContent = pickRandom(allEndings);
 
-    // Update the spans so the user sees the chosen words
-    charOut.textContent = characters[charIndex];
-    actionOut.textContent = actions[actionIndex];
-    thingOut.textContent = things[thingIndex];
-    locationOut.textContent = locations[locationIndex];
-    endingOut.textContent = endings[endingIndex];
+    storyOutput.textContent =
+        `${charOut.textContent} ${actionOut.textContent} ${thingOut.textContent} ${locationOut.textContent} ${endingOut.textContent}`;
+});
 
-    // Build the final story
-    storyOutput.textContent = 
-    `${characters[charIndex]} ${actions[actionIndex]} ${things[thingIndex]} ${locations[locationIndex]} ${endings[endingIndex]}`;
+// Random Character
+randomCharBtn.addEventListener("click", () => {
+    charOut.textContent = pickRandom(allCharacters);
+});
+
+// Random Action
+randomActionBtn.addEventListener("click", () => {
+    actionOut.textContent = pickRandom(allActions);
+});
+
+// Random Thing
+randomThingBtn.addEventListener("click", () => {
+    thingOut.textContent = pickRandom(allThings);
+});
+
+// Random Location
+randomLocationBtn.addEventListener("click", () => {
+    locationOut.textContent = pickRandom(allLocations);
+});
+
+// Random Ending
+randomEndingBtn.addEventListener("click", () => {
+    endingOut.textContent = pickRandom(allEndings);
 });
 
 
@@ -1024,5 +1357,5 @@ randomBtn.addEventListener("click", function() {
 // This uses whatever options the user has selected
 showStoryBtn.addEventListener("click", function() {
     storyOutput.textContent = 
-    `${characters[charIndex]} ${actions[actionIndex]} ${things[thingIndex]} ${locations[locationIndex]} ${endings[endingIndex]}`;
+    `${charOut.textContent} ${actionOut.textContent} ${thingOut.textContent} ${locationOut.textContent} ${endingOut.textContent}`;
 });
