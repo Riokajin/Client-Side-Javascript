@@ -1321,7 +1321,11 @@ document.getElementById("charSubButtons").addEventListener("click", (event) => {
     if (event.target.tagName !== "BUTTON") return;
 
     const game = event.target.dataset.game; // "ff7"
-    charOut.textContent = pickRandom(characters[game]);
+    const result = pickRandom(characters[game]);
+        
+    charOut.textContent = result;
+    speak(result);
+
     updateGameLogo(game);
 });
 
@@ -1331,7 +1335,10 @@ document.getElementById("locationSubButtons").addEventListener("click", (event) 
 
     const game = event.target.dataset.game;
     const result = pickRandom(locations[game]);
+
     locationOut.textContent = result;
+    speak(result);
+
     updateBackgroundForGame(game);
 });
 
@@ -1341,6 +1348,9 @@ document.getElementById("endingSubButtons").addEventListener("click", (event) =>
 
     const type = event.target.dataset.game;
     endingOut.textContent = pickRandom(endings[type]);
+
+    endingOut.textContent = result;
+    speak(result);
 });
 
 
@@ -1351,6 +1361,7 @@ charBtn.addEventListener("click", function() {
 
     const result = allCharacters[charIndex];    
     charOut.textContent = result;
+    speak(result);
 
     const game = detectGameFromCharacter(result);
     if (game) updateGameLogo(game);
@@ -1361,7 +1372,9 @@ actionBtn.addEventListener("click", function() {
     actionIndex++;
     if (actionIndex >= allActions.length) actionIndex = 0;
 
-    actionOut.textContent = allActions[actionIndex];
+    const result = allActions[actionIndex];
+    actionOut.textContent = result;
+    speak(result);
 });
 
 // Cycle through the moogle things by default
@@ -1369,7 +1382,9 @@ thingBtn.addEventListener("click", function() {
     thingIndex++;
     if (thingIndex >= allThings.length) thingIndex = 0;
 
-    thingOut.textContent = allThings[thingIndex];
+    const result = allThings[thingIndex];
+    thingOut.textContent = result;
+    speak(result);
 });
 
 // Cycle through FF1 locations by default
@@ -1379,11 +1394,10 @@ locationBtn.addEventListener("click", function() {
     
     const result = allLocations[locationIndex];
     locationOut.textContent = result;
+    speak(result);
 
     const game = detectGameFromLocation(result);
-    if (game) {
-        updateBackgroundForGame(game);
-    }
+    if (game) updateBackgroundForGame(game);
 });
 
 // Cycle through universal endings by default
@@ -1391,7 +1405,9 @@ endingBtn.addEventListener("click", function() {
     endingIndex++;
     if (endingIndex >= endingsUniversal.length) endingIndex = 0;
 
-    endingOut.textContent = allEndings[endingIndex];
+    const result = allEndings[endingIndex];
+    endingOut.textContent = result;
+    speak(result);
 });
 
 // Pick a random item from each array and show the story
@@ -1418,12 +1434,15 @@ randomBtn.addEventListener("click", function() {
 
     storyOutput.textContent =
         `${charOut.textContent} ${actionOut.textContent} ${thingOut.textContent} ${locationOut.textContent} ${endingOut.textContent}`;
+
+    speak(storyOutput.textContent);
 });
 
 // Random Character
 randomCharBtn.addEventListener("click", () => {
     const result = pickRandom(allCharacters);
     charOut.textContent = result;
+    speak(result);
 
     const game = detectGameFromCharacter(result);
     if (game) updateGameLogo(game);
@@ -1431,22 +1450,31 @@ randomCharBtn.addEventListener("click", () => {
 
 // Random Action
 randomActionBtn.addEventListener("click", () => {
-    actionOut.textContent = pickRandom(allActions);
+    const result = pickRandom(allActions);
+    actionOut.textContent = result;
+    speak(result);
+    
 });
 
 // Random Thing
 randomThingBtn.addEventListener("click", () => {
-    thingOut.textContent = pickRandom(allThings);
+    const result = pickRandom(allThings)
+    thingOut.textContent = result;
+    speak(result);
 });
 
 // Random Location
 randomLocationBtn.addEventListener("click", () => {
-    locationOut.textContent = pickRandom(allLocations);
+    const result = pickRandom(allLocations);
+    actionOut.textContent = result
+    speak(result);
 });
 
 // Random Ending
 randomEndingBtn.addEventListener("click", () => {
-    endingOut.textContent = pickRandom(allEndings);
+    const result = pickRandom(allEndings)
+    endingOut.textContent = result;
+    speak(result);
 });
 
 // Build the final story using template literals
@@ -1454,5 +1482,20 @@ randomEndingBtn.addEventListener("click", () => {
 showStoryBtn.addEventListener("click", function() {
     storyOutput.textContent = 
     `${charOut.textContent} ${actionOut.textContent} ${thingOut.textContent} ${locationOut.textContent} ${endingOut.textContent}`;
+
+    speak(storyOutput.textContent);
 });
 
+
+// text to speech function
+function speak(text) {
+    if (!text.trim()) return;
+
+    const utter = new SpeechSynthesisUtterance(text);
+    utter.rate = 1.05; // slightly playful, toy-like
+    utter.pitch = 1.1; // cheerful pitch
+    utter.volume = 1;
+
+    speechSynthesis.cancel(); // stop previous speech
+    speechSynthesis.speak(utter);
+}
