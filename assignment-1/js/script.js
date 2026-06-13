@@ -1242,6 +1242,80 @@ function updateGameLogo(game) {
     logo.src = `img/${game}.png`; // expects img/ff7.png etc.
 }
 
+// Utility: detect which game a character belongs to
+function detectGameFromCharacter(name) {
+    const gameLists = {
+        ff1: charactersFF1,
+        ff2: charactersFF2,
+        ff3: charactersFF3,
+        ff4: charactersFF4,
+        ff5: charactersFF5,
+        ff6: charactersFF6,
+        ff7: charactersFF7,
+        ff8: charactersFF8,
+        ff9: charactersFF9,
+        ff10: charactersFF10,
+        ff12: charactersFF12,
+        ff13: charactersFF13,
+        ff15: charactersFF15,
+        ff16: charactersFF16,
+    };
+
+    for (const game in gameLists) {
+        if (gameLists[game].includes(name)) {
+            return game;
+        }
+    }
+    return null;
+}
+
+function updateBackgroundForGame(game) {
+    document.body.style.background = gameBackgrounds[game] || "#222";
+}
+
+function detectGameFromLocation(name) {
+    const gameLists = {
+        ff1: locationsFF1,
+        ff2: locationsFF2,
+        ff3: locationsFF3,
+        ff4: locationsFF4,
+        ff5: locationsFF5,
+        ff6: locationsFF6,
+        ff7: locationsFF7,
+        ff8: locationsFF8,
+        ff9: locationsFF9,
+        ff10: locationsFF10,
+        ff12: locationsFF12,
+        ff13: locationsFF13,
+        ff15: locationsFF15,
+        ff16: locationsFF16,
+    };
+
+    for (const game in gameLists) {
+        if (gameLists[game].includes(name)) {
+            return game;
+        }
+    }
+    return null;
+}
+
+const gameBackgrounds = {
+    ff1: "linear-gradient(135deg, #e8f6ff 0%, #c9e8ff 40%, #a8d4ff 100%)",
+    ff2: "linear-gradient(135deg, #ffd1e6 0%, #ff8bbd 45%, #d6457b 100%)",
+    ff3: "linear-gradient(135deg, #04b2d9 0%, #03a696 40%, #03a65a 100%)",
+    ff4: "radial-gradient(circle, #bf3939 0%, #8c2053 15%, #1d193c 100%)",
+    ff5: "linear-gradient(135deg, #c7a8ff 0%, #7a4fb8 50%, #3d2a6b 100%)",
+    ff6: "linear-gradient(180deg, #000000, #e03a3e)",
+    ff7: "linear-gradient(230deg, #014023 0%, #06734b 45%, #bbcdf2)",
+    ff8: "linear-gradient(180deg, #8c1616 0%, #d6371d 33%, #ee8f07 66%, #f9e900 100%)",
+    ff9: "radial-gradient(circle, #ffffff, #ecc968, #896536)",
+    ff10: "linear-gradient(90deg, #3fa9f5, #d98cff, #ffe066)",
+    ff12: "linear-gradient(90deg, #2f8ed8, #405a7c, #aa6f94, #f9cea7)",
+    ff13: "linear-gradient(90deg, #57a0b5, #dadff7, #f5fceb, #addefe)",
+    ff15: "linear-gradient(90deg, #b5beca 0%, #6d7281 10%, #2a2834 20%, #000001 75%, #b84e19 95%)",
+    ff16: "linear-gradient(135deg, #ffb36b, #ff7a2f, #2f3f7f, #6a4fbf)"
+};
+
 // Character Subsection (Event Delegation)
 document.getElementById("charSubButtons").addEventListener("click", (event) => {
     if (event.target.tagName !== "BUTTON") return;
@@ -1256,8 +1330,9 @@ document.getElementById("locationSubButtons").addEventListener("click", (event) 
     if (event.target.tagName !== "BUTTON") return;
 
     const game = event.target.dataset.game;
-    locationOut.textContent = pickRandom(locations[game]);
-    updateGameLogo(game);
+    const result = pickRandom(locations[game]);
+    locationOut.textContent = result;
+    updateBackgroundForGame(game);
 });
 
 // Ending Subsection
@@ -1272,56 +1347,74 @@ document.getElementById("endingSubButtons").addEventListener("click", (event) =>
 // Cycle through the FF1 characters by default
 charBtn.addEventListener("click", function() {
     charIndex++;
-    if (charIndex >= charactersFF1.length) {
-        charIndex = 0; // wrap back to start
-    }
-    charOut.textContent = charactersFF1[charIndex];
+    if (charIndex >= allCharacters.length) charIndex = 0; // wrap back to start
+
+    const result = allCharacters[charIndex];    
+    charOut.textContent = result;
+
+    const game = detectGameFromCharacter(result);
+    if (game) updateGameLogo(game);
 });
 
 // Cycle through basic actions
 actionBtn.addEventListener("click", function() {
     actionIndex++;
-    if (actionIndex >= actionsBasic.length) {
-        actionIndex = 0;
-    }
-    actionOut.textContent = actionsBasic[actionIndex];
+    if (actionIndex >= allActions.length) actionIndex = 0;
+
+    actionOut.textContent = allActions[actionIndex];
 });
 
 // Cycle through the moogle things by default
 thingBtn.addEventListener("click", function() {
     thingIndex++;
-    if (thingIndex >= thingsMoogle.length) {
-        thingIndex = 0;
-    }
-    thingOut.textContent = thingsMoogle[thingIndex];
+    if (thingIndex >= allThings.length) thingIndex = 0;
+
+    thingOut.textContent = allThings[thingIndex];
 });
 
 // Cycle through FF1 locations by default
 locationBtn.addEventListener("click", function() {
     locationIndex++;
-    if (locationIndex >= locationsFF1.length) {
-        locationIndex = 0;
+    if (locationIndex >= allLocations.length) locationIndex = 0;
+    
+    const result = allLocations[locationIndex];
+    locationOut.textContent = result;
+
+    const game = detectGameFromLocation(result);
+    if (game) {
+        updateBackgroundForGame(game);
     }
-    locationOut.textContent = locationsFF1[locationIndex];
 });
 
 // Cycle through universal endings by default
 endingBtn.addEventListener("click", function() {
     endingIndex++;
-    if (endingIndex >= endingsUniversal.length) {
-        endingIndex = 0;
-    }
-    endingOut.textContent = endingsUniversal[endingIndex];
+    if (endingIndex >= endingsUniversal.length) endingIndex = 0;
+
+    endingOut.textContent = allEndings[endingIndex];
 });
 
 // Pick a random item from each array and show the story
 randomBtn.addEventListener("click", function() {
+    const charResult = pickRandom(allCharacters);
+    const actionResult = pickRandom(allActions);
+    const thingResult = pickRandom(allThings);
+    const locationResult = pickRandom(allLocations)
+    const endingResult = pickRandom(allEndings);
     // Generate random indexes for each array
-    charOut.textContent = pickRandom(allCharacters);
-    actionOut.textContent = pickRandom(allActions);
-    thingOut.textContent = pickRandom(allThings);
-    locationOut.textContent = pickRandom(allLocations)
-    endingOut.textContent = pickRandom(allEndings);
+    charOut.textContent = charResult;
+    actionOut.textContent = actionResult;
+    thingOut.textContent = thingResult;
+    locationOut.textContent = locationResult;
+    endingOut.textContent = endingResult;
+
+    // Detect game from character. update logo
+    const charGame = detectGameFromCharacter(charResult);
+    if (charGame) updateGameLogo(charGame);
+
+    // Detext game from location. update background
+    const locGame = detectGameFromLocation(locationResult);
+    if (locGame) updateBackgroundForGame(locGame);
 
     storyOutput.textContent =
         `${charOut.textContent} ${actionOut.textContent} ${thingOut.textContent} ${locationOut.textContent} ${endingOut.textContent}`;
@@ -1329,7 +1422,11 @@ randomBtn.addEventListener("click", function() {
 
 // Random Character
 randomCharBtn.addEventListener("click", () => {
-    charOut.textContent = pickRandom(allCharacters);
+    const result = pickRandom(allCharacters);
+    charOut.textContent = result;
+
+    const game = detectGameFromCharacter(result);
+    if (game) updateGameLogo(game);
 });
 
 // Random Action
@@ -1352,10 +1449,10 @@ randomEndingBtn.addEventListener("click", () => {
     endingOut.textContent = pickRandom(allEndings);
 });
 
-
 // Build the final story using template literals
 // This uses whatever options the user has selected
 showStoryBtn.addEventListener("click", function() {
     storyOutput.textContent = 
     `${charOut.textContent} ${actionOut.textContent} ${thingOut.textContent} ${locationOut.textContent} ${endingOut.textContent}`;
 });
+

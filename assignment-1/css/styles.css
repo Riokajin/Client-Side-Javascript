@@ -4,6 +4,9 @@ body {
     font-family: Arial, sans-serif;
     text-align: center;
     padding: 20px;
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 div {
@@ -20,4 +23,22 @@ button {
     margin-top: 20px;
     font-size: 1.2em;
     font-weight: bold;
+}
+
+#gameLogo {
+    width: 160px;
+    height: 90px;
+    object-fit: contain;
+    display: block;
+}
+
+.fftext {
+    color: black;
+    font-family: 'Cinzel', serif;
+    text-shadow:
+        -1px -1px 0 #fff,
+         1px -1px 0 #fff,
+        -1px  1px 0 #fff,
+         1px  1px 0 #fff,
+         0px  0px 1px #fff;
 }
