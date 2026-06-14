@@ -13,17 +13,20 @@
 
             <!-- Game Logo (reactive) -->
             <!-- a default valid invisible png -->
-             <div id="logoContainer">
-                <img id="gameLogo" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mP8/x8AAwMB/6XKJXcAAAAASUVORK5CYII=" alt="Game Logo">
-             </div>
-            
-            <!-- Character Section -->
-            <div class="section">
-                <button id="charBtn">Character</button>
-                <span id="charOut"></span>
 
-                <button id="randomCharBtn">Random Character</button>
             
+            <!-- Character card -->
+            <div class="card fftext">
+                <h2>Character</h2>
+                <div class="logoInCard">
+                    <img id="gameLogo" alt="Game Logo">
+                </div>
+                <span id="charOut" class="output"></span>
+
+                <div class="mainRow">
+                    <button id="charBtn">Next Character</button>
+                    <button id="randomCharBtn">Random</button>
+                </div>
                 <!-- Character Subsection Buttons -->
                  <!-- learned from https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes -->
                 <div class="subButtons" id="charSubButtons">
@@ -44,30 +47,37 @@
                 </div>
             </div>
 
-            <!-- Action Section -->
-            <div class="section">
-                <button id="actionBtn">Action</button>
-                <span id="actionOut"></span>
+            <!-- Action Card -->
+            <div class="card fftext">
+                <h2>Action</h2>
+                <span id="actionOut" class="output"></span>
 
-                <button id="randomActionBtn">Random Action</button>
+                <div class="mainRow">
+                    <button id="actionBtn">Next Action</button>
+                    <button id="randomActionBtn">Random Action</button>
+                </div>
             </div>
 
             
 
-            <!-- Thing Section -->
-            <div class="section">
-                <button id="thingBtn">Thing</button>
-                <span id="thingOut"></span>
-
-                <button id="randomThingBtn">Random Thing</button>
+            <!-- Thing Card -->
+            <div class="card fftext">
+                <h2>Thing</h2>
+                <span id="thingOut" class="output"></span>
+                <div class="mainRow">
+                    <button id="thingBtn">Next Thing</button>
+                    <button id="randomThingBtn">Random Thing</button>
+                </div>
             </div>
             
-            <!-- Location Section -->
-            <div class="section">
-                <button id="locationBtn">Location</button>
-                <span id="locationOut"></span>
-
-                <button id="randomLocationBtn">Random Location</button>
+            <!-- Location Card -->
+            <div class="card fftext">
+                <h2>Location</h2>
+                <span id="locationOut" class="output"></span>
+                <div class="mainRow">
+                    <button id="locationBtn">Next Location</button>
+                    <button id="randomLocationBtn">Random Location</button>
+                </div>
 
                 <!-- Location Subsection Buttons -->
                 <div class="subButtons" id="locationSubButtons">
@@ -88,12 +98,15 @@
                 </div>
             </div>
 
-            <!-- Ending Section -->
-            <div class="section">
-                <button id="endingBtn">Ending</button>
-                <span id="endingOut"></span>
-
-                <button id="randomEndingBtn">Random Ending</button>
+            <!-- Ending Card -->
+            <div class="card fftext">
+                <h2>Ending</h2>
+                <span id="endingOut" class="output"></span>
+                
+                <div>
+                    <button id="endingBtn">Ending</button>
+                    <button id="randomEndingBtn">Random Ending</button>
+                </div>
 
                 <!-- Ending Subsection Buttons -->
                 <div class="subButtons" id="endingSubButtons">
@@ -108,21 +121,23 @@
                     <button data-game="ffthemed">FF-Themed</button>
                 </div>
             </div>
-
+            
             <!-- Button that builds and displays the final story -->
-            <button id="showStoryBtn">Show Story</button>
-
-            <!-- Button that picks a random item from each array -->
-            <button id="randomBtn">Random Story</button>
-
-            <!-- Paragraph where the completed story will appear -->
-            <p id="storyOutput"></p>
+            <div class="card fftext">
+                <h2>Your Story</h2>
+                <p id="storyOutput" class="output"></p>
+            
+                <div class="mainRow">
+                    <button id="showStoryBtn">Show Story</button>
+                    <button id="randomBtn">Random Story</button>
+                </div>
+            </div>
         </div>
-        <p>All logos sourced from <a>https://finalfantasy.fandom.com/wiki/Logos_of_Final_Fantasy</a><br>
-        Disclaimer:  
-This project is a fan‑made academic assignment.
-All characters, locations, logos, and references to Final Fantasy are the property of Square Enix Holdings Co., Ltd.
-No copyright infringement is intended.
-This project is not affiliated with or endorsed by Square Enix.</p>
+        <p class="fftext" style="font-size:0.8em; opacity:0.8;">
+            All logos sourced from <a>https://finalfantasy.fandom.com/wiki/Logos_of_Final_Fantasy</a><br>
+            This project is a fan-made academic assignment. All characters, locations, logos, and references to 
+            Final Fantasy are the property of Square Enix Holdings Co., Ltd. No copyright 
+            infringement is intended. This project is not affiliated with or endorsed by Square Enix.
+        </p>
     </body>
 </html>

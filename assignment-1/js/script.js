@@ -1347,8 +1347,8 @@ document.getElementById("endingSubButtons").addEventListener("click", (event) =>
     if (event.target.tagName !== "BUTTON") return;
 
     const type = event.target.dataset.game;
-    endingOut.textContent = pickRandom(endings[type]);
-
+    const result = pickRandom(endings[type])
+    
     endingOut.textContent = result;
     speak(result);
 });
@@ -1466,7 +1466,7 @@ randomThingBtn.addEventListener("click", () => {
 // Random Location
 randomLocationBtn.addEventListener("click", () => {
     const result = pickRandom(allLocations);
-    actionOut.textContent = result
+    locationOut.textContent = result
     speak(result);
 });
 
