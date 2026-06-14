@@ -1,5 +1,11 @@
+
+// Story Generator Script
+// This file controls all the interactive parts of the See 'N' Say style story maker
+// Each button cycles through an array of words, and the final button builds a full sentence.
+
 // Arrays for each part of the story
 // Each array holds the different options the user can cycle through with sub-arrays to make it easier to go through categories with more buttons
+
 
 // FF1
 let charactersFF1 = [
@@ -1082,7 +1088,7 @@ let endingsFFThemed = [
     "and the airship autopilot refused to engage afterward."
 ];
 
-// Grouping arrays into objects to they can be easily accessed.
+// Grouping arrays into objects so they can be easily accessed.
 const characters = {
     ff1: charactersFF1,
     ff2: charactersFF2,
@@ -1196,16 +1202,17 @@ const allEndings = [
 ];
 
 
-// Index counters for cycling through each array
+// Index counters for cycling through each list
 // These keep track of which item is currently selected
+// Each "Next" button moves forward by 1, and wraps back to the start
 let charIndex = 0;
 let actionIndex = 0;
 let thingIndex = 0;
 let locationIndex = 0;
 let endingIndex = 0;
 
-// Grab all the buttons and output spans from the page
-// These let us update the text beside each button
+// Get references to all buttons and output areas on the page.
+// These let us update the text when a user makes a selection
 const charBtn = document.querySelector("#charBtn");
 const actionBtn = document.querySelector("#actionBtn");
 const thingBtn = document.querySelector("#thingBtn");
@@ -1231,12 +1238,14 @@ const randomThingBtn = document.querySelector("#randomThingBtn");
 const randomLocationBtn = document.querySelector("#randomLocationBtn");
 const randomEndingBtn = document.querySelector("#randomEndingBtn");
 
-// Utility: pick a random item from any array
+// Returns a random item from any array
+// Used by the random buttons and the random story generator.
 function pickRandom(arr) {
     return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// Utility: update the game logo based on selected game
+// update the game logo based on the selected game
+// The image files are stored in the /img folder
 function updateGameLogo(game) {
     const logo = document.getElementById("gameLogo");
     logo.src = `img/${game}.png`; // expects img/ff7.png etc.
@@ -1316,7 +1325,8 @@ const gameBackgrounds = {
     ff16: "linear-gradient(135deg, #ffb36b, #ff7a2f, #2f3f7f, #6a4fbf)"
 };
 
-// Character Subsection (Event Delegation)
+// Character Sub-Buttons (FF1-FF16)
+// Event Delegation: one listener handles all the small buttons inside this container.
 document.getElementById("charSubButtons").addEventListener("click", (event) => {
     if (event.target.tagName !== "BUTTON") return;
 
@@ -1354,7 +1364,8 @@ document.getElementById("endingSubButtons").addEventListener("click", (event) =>
 });
 
 
-// Cycle through the FF1 characters by default
+// Move to the next character in the full list.
+// When we reach the end, wrap back to the beginning.
 charBtn.addEventListener("click", function() {
     charIndex++;
     if (charIndex >= allCharacters.length) charIndex = 0; // wrap back to start
@@ -1477,8 +1488,8 @@ randomEndingBtn.addEventListener("click", () => {
     speak(result);
 });
 
-// Build the final story using template literals
-// This uses whatever options the user has selected
+// Build the final story using the user's selected words.
+// This combines all 5 parts into one sentence and speak it aloud.
 showStoryBtn.addEventListener("click", function() {
     storyOutput.textContent = 
     `${charOut.textContent} ${actionOut.textContent} ${thingOut.textContent} ${locationOut.textContent} ${endingOut.textContent}`;
