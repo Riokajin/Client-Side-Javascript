@@ -996,6 +996,7 @@ let endingsChaotic = [
     "and the timeline rage-quit.",
     "and the laws of magic unionized.",
     "and the concept of time took a vacation.",
+    "and every shouted 'You spoony bard!'",
     "and the narrator switched genres mid-sentence.",
     "and the world briefly became a rhythm game.",
     "and the sun filed a formal resignation.",
@@ -1003,7 +1004,8 @@ let endingsChaotic = [
     "and the world glitched for dramatic effect.",
     "and the battle theme started playing for no reason.",
     "and the universe soft-locked.",
-    "and the laws of causality took a coffee break."
+    "and the laws of causality took a coffee break.",
+    "and thus they were forever known as a spoony bard."
 ];
 
 // Greg / Gilgamesh
@@ -1085,7 +1087,8 @@ let endingsFFThemed = [
     "and the chocobo sensed EXP potential.",
     "and the crystal hummed in approval.",
     "and the void whispered 'not bad'.",
-    "and the airship autopilot refused to engage afterward."
+    "and the airship autopilot refused to engage afterward.",
+    "and from beyond the grave someone called them a spoony bard."
 ];
 
 // Grouping arrays into objects so they can be easily accessed.
