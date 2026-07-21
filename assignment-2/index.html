@@ -1,13 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8" />
     <title>Pizza Maker</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/styles.css" rel="stylesheet">
-    <script src="js/main.js" defer></script>
+    <meta name="author" content="Adam Evans"/>
+    <meta name="description" content="Pizza Restaurant order form."/>
+    <link rel="shortcut icon" href="images/favicon.ico"/>
+    <link rel="stylesheet" href="css/style.css" />
     <script src="js/pizza.js" defer></script>
-    
-
+    <script src="js/main.js" defer></script>
 </head>
+
+<body>
+
+    <!-- Assignment 2 – The Pizza Maker -->
+    <header>
+        <h1>Build Your Custom Pizza</h1>
+        <p>Choose your size, crust, toppings, seasonings, and pickup options. Your pizza will be crafted fresh based on your selections.</p>
+    </header>
+
+    <main>
+        <section>
+            <form id="pizzaForm">
+
+                <!-- Contact information -->
+                <fieldset class="customer-fieldset">
+                    <legend>Contact Information</legend>
+
+                    <label for="name">Name:</label>
+                    <input type="text" name="name" id="name" required placeholder="Your Name"/>
+
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" required placeholder="you@example.com"/>
+
+                    <label for="phone">Phone Number:</label>
+                    <input type="tel" name="phone" id="phone" placeholder="555-1234"/>
+                </fieldset>
+
+                <!-- Pizza Size -->
+                <fieldset class="size-fieldset">
+                    <legend>Pizza Size</legend>
+
+                    <label for="small">Small (6 slices)</label>
+                    <input type="radio" name="size" id="small" value="small" required/>
+
+                    <label for="medium">Medium (8 slices)</label>
+                    <input type="radio" name="size" id="medium" value="medium"/>
+
+                    <label for="large">Large (10 slices)</label>
+                    <input type="radio" name="size" id="large" value="large"/>
+
+                    <label for="x-large">Extra Large (12 slices)</label>
+                    <input type="radio" name="size" id="x-large" value="x-large"/>
+                </fieldset>
+
+                <!-- Crust Thickness -->
+                <fieldset class="thickness-fieldset">
+                    <legend>Crust Thickness</legend>
+
+                    <label for="thin">Thin Crust</label>
+                    <input type="radio" name="thickness" id="thin" value="thin" required/>
+
+                    <label for="thick">Thick Crust</label>
+                    <input type="radio" name="thickness" id="thick" value="thick"/>
+
+                    <label for="regular">Regular</label>
+                    <input type="radio" name="thickness" id="regular" value="regular"/>
+                </fieldset>
+
+                <!-- Bake Level -->
+                <fieldset class="bake-fieldset">
+                    <legend>Bake Level</legend>
+
+                    <label for="light">Lightly Done</label>
+                    <input type="radio" name="bake" id="light" value="light" required/>
+
+                    <label for="standard">Standard</label>
+                    <input type="radio" name="bake" id="standard" value="standard"/>
+
+                    <label for="well">Well Done</label>
+                    <input type="radio" name="bake" id="well" value="well"/>
+                </fieldset>
+
+                <!-- Crust Base -->
+                <fieldset class="base-fieldset">
+                    <legend>Crust Base</legend>
+
+                    <select name="crustBase" id="crustBase">
+                        <option value="">Standard</option>
+                        <option value="gluten-free">Gluten-Free</option>
+                        <option value="cauliflower">Cauliflower</option>
+                        <option value="whole-wheat">Whole Wheat</option>
+                    </select>
+                </fieldset>
+
+                <!-- Cheese Type -->
+                <fieldset class="cheese-fieldset">
+                    <legend>Cheese Type</legend>
+
+                    <label for="mozzarella">Mozzarella</label>
+                    <input type="radio" name="cheese" id="mozzarella" value="mozzarella" required/>
+
+                    <label for="4-cheese">4-Cheese Blend</label>
+                    <input type="radio" name="cheese" id="4-cheese" value="4-cheese"/>
+
+                    <label for="provolone">Smoked Provolone</label>
+                    <input type="radio" name="cheese" id="provolone" value="provolone"/>
+
+                    <label for="vegan">Vegan Melt</label>
+                    <input type="radio" name="cheese" id="vegan" value="vegan"/>
+                </fieldset>
+
+                <!-- Toppings -->
+                <fieldset class="toppings-fieldset">
+                    <legend>Toppings</legend>
+
+                    <div class="topping-group meat-group">
+                        <h4>Meat</h4>
+
+                        <input type="checkbox" name="toppings" id="pepperoni" value="pepperoni">
+                        <label for="pepperoni">Pepperoni</label>
+
+                        <input type="checkbox" name="toppings" id="sausage" value="sausage">
+                        <label for="sausage">Italian Sausage</label>
+
+                        <input type="checkbox" name="toppings" id="bacon" value="bacon">
+                        <label for="bacon">Bacon Crumble</label>
+
+                        <input type="checkbox" name="toppings" id="ham" value="ham">
+                        <label for="ham">Ham</label>
+
+                        <input type="checkbox" name="toppings" id="chicken" value="chicken">
+                        <label for="chicken">Grilled Chicken</label>
+
+                        <input type="checkbox" name="toppings" id="beef" value="beef">
+                        <label for="beef">Ground Beef</label>
+
+                        <input type="checkbox" name="toppings" id="salami" value="salami">
+                        <label for="salami">Salami</label>
+
+                        <input type="checkbox" name="toppings" id="prosciutto" value="prosciutto">
+                        <label for="prosciutto">Prosciutto</label>
+
+                        <input type="checkbox" name="toppings" id="anchovies" value="anchovies">
+                        <label for="anchovies">Anchovies</label>
+
+                        <input type="checkbox" name="toppings" id="chorizo" value="chorizo">
+                        <label for="chorizo">Chorizo</label>
+
+                        <input type="checkbox" name="toppings" id="turkey" value="turkey">
+                        <label for="turkey">Turkey</label>
+
+                        <input type="checkbox" name="toppings" id="steak" value="steak">
+                        <label for="steak">Steak Strips</label>
+                    </div>
+
+                    <div class="topping-group veg-group">
+                        <h4>Vegetables</h4>
+
+                        <input type="checkbox" name="toppings" id="mushrooms" value="mushrooms">
+                        <label for="mushrooms">Mushrooms</label>
+
+                        <input type="checkbox" name="toppings" id="onions" value="onions">
+                        <label for="onions">Red Onions</label>
+
+                        <input type="checkbox" name="toppings" id="gpeppers" value="gpeppers">
+                        <label for="gpeppers">Green Peppers</label>
+
+                        <input type="checkbox" name="toppings" id="bpeppers" value="bpeppers">
+                        <label for="bpeppers">Banana Peppers</label>
+
+                        <input type="checkbox" name="toppings" id="jalapenos" value="jalapenos">
+                        <label for="jalapenos">Jalapenos</label>
+
+                        <input type="checkbox" name="toppings" id="pineapple" value="pineapple">
+                        <label for="pineapple">Pineapple</label>
+
+                        <input type="checkbox" name="toppings" id="bolives" value="bolives">
+                        <label for="bolives">Black Olives</label>
+
+                        <input type="checkbox" name="toppings" id="golives" value="golives">
+                        <label for="golives">Green Olives</label>
+
+                        <input type="checkbox" name="toppings" id="spinach" value="spinach">
+                        <label for="spinach">Spinach</label>
+
+                        <input type="checkbox" name="toppings" id="artichoke" value="artichoke">
+                        <label for="artichoke">Artichoke Hearts</label>
+
+                        <input type="checkbox" name="toppings" id="zucchini" value="zucchini">
+                        <label for="zucchini">Zucchini</label>
+
+                        <input type="checkbox" name="toppings" id="broccoli" value="broccoli">
+                        <label for="broccoli">Broccoli</label>
+
+                        <input type="checkbox" name="toppings" id="corn" value="corn">
+                        <label for="corn">Corn</label>
+
+                        <input type="checkbox" name="toppings" id="arugula" value="arugula">
+                        <label for="arugula">Arugula</label>
+
+                        <input type="checkbox" name="toppings" id="garlic" value="garlic">
+                        <label for="garlic">Roasted Garlic</label>
+
+                        <input type="checkbox" name="toppings" id="sliced" value="sliced">
+                        <label for="sliced">Sliced Tomatoes</label>
+
+                        <input type="checkbox" name="toppings" id="sun-dried" value="sun-dried">
+                        <label for="sun-dried">Sun-dried Tomatoes</label>
+                    </div>
+                </fieldset>
+
+                <!-- Seasonings -->
+                <fieldset class="seasoning-fieldset">
+                    <legend>Seasonings</legend>
+
+                    <input type="checkbox" name="seasonings" id="oregano" value="oregano">
+                    <label for="oregano">Oregano</label>
+
+                    <input type="checkbox" name="seasonings" id="basil" value="basil">
+                    <label for="basil">Basil</label>
+
+                    <input type="checkbox" name="seasonings" id="flakes" value="flakes">
+                    <label for="flakes">Chili Flakes</label>
+
+                    <input type="checkbox" name="seasonings" id="garlic-powder" value="garlic-powder">
+                    <label for="garlic-powder">Garlic Powder</label>
+
+                    <input type="checkbox" name="seasonings" id="italian" value="italian">
+                    <label for="italian">Italian Herb Blend</label>
+                </fieldset>
+
+                <!-- Order Details -->
+                <fieldset class="order-details-fieldset">
+                    <legend>Order Details</legend>
+
+                    <input type="radio" name="pickup-option" id="pickup-asap" value="asap" checked/>
+                    <label for="pickup-asap">ASAP (as soon as it's ready)</label>
+
+                    <input type="radio" name="pickup-option" id="pickup-scheduled" value="scheduled"/>
+                    <label for="pickup-scheduled">Schedule a pickup time</label>
+
+                    <label for="pickup-time">Preferred Time:</label>
+                    <input type="time" name="pickup-time" id="pickup-time"/>
+
+                    <label for="notes">Special Instructions:</label>
+                    <textarea name="notes" id="notes" rows="5" cols="40" placeholder="Add any special instructions here."></textarea>
+                </fieldset>
+
+                <!-- Buttons -->
+                <button type="submit" class="submit">Order Pizza</button>
+                <button type="reset" class="reset">Reset Form</button>
+
+            </form>
+            <div class="result-panel">            
+                <h3>Pizza Order Summary</h3>
+                <p id="pizzaDescription"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p id="student-info"></p>
+        <p>Pizza Maker – Freshly Crafted.</p>
+    </footer>
+
+</body>
 </html>

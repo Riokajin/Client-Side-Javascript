@@ -1,0 +1,433 @@
+/* Font Imports */
+@import url('https://fonts.googleapis.com/css2?family=Rokkitt&family=Orbitron&display=swap');
+
+/* Materia Color Palette */
+:root {
+    --materia-magic: #009933;
+    --materia-independent: #9933ff;
+    --materia-summon: #ff0033;
+    --materia-command: #ffcc00;
+    --materia-support: #0033cc;
+
+    --materia-heal: #66ffcc;
+    --materia-ice: #99ccff;
+    --materia-reactor: #4e4e4e;
+    --materia-bronze: #3f3a1f;
+    --materia-ember: #4a2a2a;
+    --materia-contact: #4da6ff;
+    --materia-effect: #ccff66;
+    --materia-enhance: #cc3399;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html {
+    box-sizing: border-box;
+}
+
+/* Page Theme */
+body {
+    background-color: #2e1f1a;
+    color: #f5f5dc;
+    font-family: 'Rokkitt', serif;
+    padding: 2em;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    max-width: 1000px;
+    height: auto;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Base Fieldset Styling */
+fieldset {
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 1.5em auto;
+    max-width: 700px;
+}
+
+fieldset legend {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3em;
+    padding: 0 0.5em;
+    color: inherit;
+}
+
+fieldset label {
+    display: block;
+    margin: 0.6em 0;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    color: #f5f5dc;
+}
+
+.toppings-fieldset label,
+.order-details-fieldset label,
+.meat-group label,
+.veg-group label,
+.seasoning-fieldset label {
+    display: inline-block;
+    margin-left: 0.4em;
+}
+
+/* Contact Info */
+.customer-fieldset {
+    border: 2px solid var(--materia-contact);
+    background-color: #2a2f38;
+    box-shadow: 0 0 10px var(--materia-contact)33;
+}
+
+.customer-fieldset legend {
+    color: var(--materia-contact);
+}
+
+/* Size Selection */
+.size-fieldset {
+    background-color: #1e1e1e;
+    border: 2px solid var(--materia-magic);
+    box-shadow: 0 0 10px var(--materia-magic)33;
+}
+
+.size-fieldset legend {
+    color: var(--materia-magic);
+}
+
+.size-fieldset input[type="radio"] {
+    accent-color: var(--materia-magic);
+    margin-right: 0.5em;
+}
+
+.size-fieldset label:hover {
+    color: var(--materia-magic);
+}
+
+/* Thickness Selection */
+.thickness-fieldset {
+    background-color: #3b2f2f;
+    border: 2px solid var(--materia-independent);
+    box-shadow: 0 0 10px var(--materia-independent)33;
+}
+
+.thickness-fieldset legend {
+    color: var(--materia-independent);
+}
+
+.thickness-fieldset input[type="radio"] {
+    accent-color: var(--materia-independent);
+    margin-right: 0.5em;
+}
+
+.thickness-fieldset label:hover {
+    color: var(--materia-independent);
+}
+
+/* Bake Level */
+.bake-fieldset {
+    background-color: #4e4e4e;
+    border: 2px solid var(--materia-summon);
+    box-shadow: 0 0 10px var(--materia-summon)33;
+}
+
+.bake-fieldset legend {
+    color: var(--materia-summon);
+}
+
+.bake-fieldset input[type="radio"] {
+    accent-color: var(--materia-summon);
+    margin-right: 0.5em;
+}
+
+.bake-fieldset label:hover {
+    color: var(--materia-summon);
+}
+
+/* Crust Base */
+.base-fieldset {
+    background-color: #2f2f2f;
+    border: 2px solid var(--materia-support);
+    box-shadow: 0 0 10px var(--materia-support)33;
+}
+
+.base-fieldset legend {
+    color: var(--materia-support);
+}
+
+.base-fieldset select {
+    width: 100%;
+    padding: 0.5em;
+    font-family: 'Rokkitt', serif;
+    font-size: 1em;
+    background-color: #1e1e1e;
+    color: #f5f5dc;
+    border: 2px solid var(--materia-support);
+    border-radius: 4px;
+    box-shadow: 0 0 5px var(--materia-support)33;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.base-fieldset select:hover,
+.base-fieldset select:focus {
+    border-color: #3366ff;
+    box-shadow: 0 0 10px #3366ff55;
+    outline: none;
+}
+
+/* Cheese Selection */
+.cheese-fieldset {
+    background-color: #3f3a1f;
+    border: 2px solid var(--materia-command);
+    box-shadow: 0 0 10px var(--materia-command)33;
+}
+
+.cheese-fieldset legend {
+    color: var(--materia-command);
+}
+
+.cheese-fieldset input[type="radio"] {
+    accent-color: var(--materia-command);
+    margin-right: 0.5em;
+}
+
+.cheese-fieldset label:hover {
+    color: var(--materia-command);
+}
+
+/* Toppings */
+.toppings-fieldset {
+    background-color: #2f2f1f;
+    border: 2px solid var(--materia-effect);
+    box-shadow: 0 0 10px var(--materia-effect)33;
+}
+
+.toppings-fieldset legend {
+    color: var(--materia-effect);
+}
+
+/* Meat Group (sub‑section) */
+.meat-group {
+    background-color: #4a2a2a;
+    border: 2px solid var(--materia-enhance);
+    border-radius: 6px;
+    padding: 1em;
+    margin-top: 1em;
+    box-shadow: 0 0 10px var(--materia-enhance)33;
+}
+
+.meat-group h4 {
+    font-size: 1.1em;
+    color: #ff99cc;
+    margin-bottom: 0.5em;
+}
+
+.meat-group input[type="checkbox"] {
+    accent-color: var(--materia-enhance);
+    margin-right: 0.5em;
+}
+
+.meat-group label {
+    margin: 0.4em 0;
+}
+
+.meat-group label:hover {
+    color: var(--materia-enhance);
+}
+
+.meat-group input[type="checkbox"]:checked + label {
+    color: var(--materia-enhance);
+    font-weight: bold;
+}
+
+/* Veg Group (sub‑section) */
+.veg-group {
+    background-color: #145c5c;
+    border: 2px solid var(--materia-heal);
+    border-radius: 6px;
+    padding: 1em;
+    margin-top: 1em;
+    box-shadow: 0 0 8px var(--materia-heal)33;
+}
+
+.veg-group h4 {
+    font-size: 1.1em;
+    color: #b3fff0;
+    margin-bottom: 0.5em;
+}
+
+.veg-group input[type="checkbox"] {
+    accent-color: var(--materia-heal);
+    margin-right: 0.5em;
+}
+
+.veg-group label:hover {
+    color: var(--materia-heal);
+}
+
+.veg-group input[type="checkbox"]:checked + label {
+    color: var(--materia-heal);
+    font-weight: bold;
+}
+
+/* Seasonings */
+.seasoning-fieldset {
+    background-color: #1a2a3f;
+    border: 2px solid var(--materia-ice);
+    border-radius: 8px;
+    padding: 1.5em;
+    box-shadow: 0 0 10px var(--materia-ice)33;
+}
+
+.seasoning-fieldset legend {
+    color: var(--materia-ice);
+}
+
+.seasoning-fieldset input[type="checkbox"] {
+    accent-color: var(--materia-ice);
+    margin-right: 0.5em;
+}
+
+.seasoning-fieldset label {
+    margin: 0.4em 0;
+}
+
+.seasoning-fieldset label:hover {
+    color: var(--materia-ice);
+}
+
+.seasoning-fieldset input[type="checkbox"]:checked + label {
+    color: var(--materia-ice);
+    font-weight: bold;
+}
+
+/* Order Details */
+.order-details-fieldset {
+    background-color: #2f2f2f;
+    border: 2px solid #888;
+    box-shadow: 0 0 10px #88888833;
+}
+
+.order-details-fieldset legend {
+    color: #888;
+}
+
+.order-details-fieldset label:hover {
+    color: #888;
+}
+
+.order-details-fieldset input[type="text"],
+.order-details-fieldset input[type="time"],
+.order-details-fieldset select,
+.order-details-fieldset textarea {
+    background-color: #1f1f1f;
+    color: #f5f5dc;
+    border: 2px solid #666;
+    padding: 0.5em;
+    border-radius: 6px;
+    width: 100%;
+    margin-bottom: 1em;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.order-details-fieldset input[type="radio"] {
+    accent-color: #888888;
+    margin-right: 0.5em;
+    vertical-align: middle;
+}
+
+/* Buttons */
+.submit {
+    background-color: var(--materia-summon);
+    color: #f5f5dc;
+    border: 2px solid #888;
+    border-radius: 6px;
+    padding: 0.6em 1.2em;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    box-shadow: 0 0 12px var(--materia-summon)55, 0 0 32px var(--materia-summon)66;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.1s ease;
+}
+
+.submit:hover {
+    background-color: #ff1a4d;
+    box-shadow: 0 0 16px var(--materia-summon)aa, 0 0 32px var(--materia-summon)66;
+    transform: scale(1.02);
+}
+
+.submit:active {
+    background-color: #cc0029;
+    box-shadow: 0 0 20px var(--materia-summon)99 inset;
+    transform: scale(0.98);
+}
+
+.reset {
+    background-color: #2f2f2f;
+    color: #f5f5dc;
+    border: 2px solid #888;
+    border-radius: 6px;
+    padding: 0.6em 1.2em;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1em;
+    cursor: pointer;
+    box-shadow: 0 0 10px #88888833;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.reset:hover {
+    background-color: #444;
+    box-shadow: 0 0 12px #88888866;
+}
+
+.reset:active {
+    background-color: #1f1f1f;
+    box-shadow: 0 0 14px #88888899 inset;
+}
+
+.result-panel {
+    background-color: #1e1e1e;
+    border: 2px solid var(--materia-summon);
+    border-radius: 8px;
+    padding: 1.5em;
+    margin: 2em auto 1em auto;
+    max-width: 700px;
+    box-shadow: 0 0 12px var(--materia-summon)55;
+    font-family: 'Rokkitt', serif;
+    color: #f5f5dc;
+}
+
+.result-panel::before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 60%;
+    margin: 0 auto 1.5em auto;
+    background: var(--materia-summon);
+    box-shadow: 0 0 8px var(--materia-summon);
+}
+
+.result-panel h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: var(--materia-summon);
+    margin-bottom: 0.8em;
+    text-align: center;
+    font-size: 1.4em;
+    text-shadow: 0 0 6px var(--materia-summon);
+}
+
+.result-panel p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    margin-top: 0.5em;
+}
