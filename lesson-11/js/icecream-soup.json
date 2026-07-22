@@ -7,14 +7,14 @@
     "calories": 200,
     "type": "ice-cream",
     "ingredients": ["chocolate syrup", "sprinkles", "chocolate base"],
-    "image": "https://riokajin.github.io/Client-Side-Javascript/week-11/images/chocolate-mint.svg"
+    "image": "https://riokajin.github.io/Client-Side-Javascript/lesson-11/images/chocolate-mint.svg"
     },
     {
         "name": "peach mango",
         "calories": 150,
         "type": "ice-cream",
         "ingredients": ["peach puree", "mango chunks", "cream"],
-        "image": "https://riokajin.github.io/Client-Side-Javascript/week-11/images/peach-mango.svg"
+        "image": "https://riokajin.github.io/Client-Side-Javascript/lesson-11/images/peach-mango.svg"
     }]
     
 }
