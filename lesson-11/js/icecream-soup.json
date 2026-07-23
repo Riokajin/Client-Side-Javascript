@@ -15,6 +15,13 @@
         "type": "ice-cream",
         "ingredients": ["peach puree", "mango chunks", "cream"],
         "image": "https://riokajin.github.io/Client-Side-Javascript/lesson-11/images/peach-mango.svg"
+    }, {
+                "name": "Strawberry Sprinkle",
+        "calories": 150,
+        "type": "ice-cream",
+        "ingredients": ["peach puree", "mango chunks", "cream"],
+        "image": "https://riokajin.github.io/Client-Side-Javascript/lesson-11/images/strawberry-sprinkle.svg"
+
     }]
     
 }
