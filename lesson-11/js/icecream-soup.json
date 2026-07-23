@@ -15,13 +15,28 @@
         "type": "ice-cream",
         "ingredients": ["peach puree", "mango chunks", "cream"],
         "image": "https://riokajin.github.io/Client-Side-Javascript/lesson-11/images/peach-mango.svg"
-    }, {
-                "name": "Strawberry Sprinkle",
+    }, 
+    {
+        "name": "Strawberry Sprinkle",
         "calories": 150,
         "type": "ice-cream",
         "ingredients": ["peach puree", "mango chunks", "cream"],
         "image": "https://riokajin.github.io/Client-Side-Javascript/lesson-11/images/strawberry-sprinkle.svg"
 
+    },
+    {
+        "name": "Caramel Crunch",
+        "calories": 220,
+        "type": "ice-cream",
+        "ingredients": ["caramel swirl", "cream", "toffee bits"],
+        "image": "https://riokajin.github.io/Client-Side-Javascript/lesson-11/images/ice-cream-xtra1.svg"
+    },
+    {
+        "name": "Blueberry Blast",
+        "calories": 180,
+        "type": "ice-cream",
+        "ingredients": ["blueberries", "cream", "vanilla"],
+        "image": "https://riokajin.github.io/Client-Side-Javascript/lesson-11/images/ice-cream-xtra2.svg"
     }]
     
 }
