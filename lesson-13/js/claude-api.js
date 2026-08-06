@@ -82,6 +82,12 @@ function sendChatMessage(){
 
     // STEP 8a: Get form values
     let userInput = userMessage.value;
+    conversationHistory.push({
+        role: "user",
+        content: userInput
+    });
+
+    displayUserMessage(userInput);
     // STEP 8b: Create complete url
     let url = `${baseURL}/api/claude/messages`;
     // STEP 8c: Prepare the request body according to Claude API format
@@ -89,14 +95,10 @@ function sendChatMessage(){
     let body = {
         model: "claude-sonnet-5",
         max_tokens: maxTokens,
-        messages: [
-            {
-                role: "user",
-                content: userInput
-            }
-        ]
-    }
+        messages: conversationHistory
+    };
     // STEP 8d: Make the API request using fetch()
+    console.log("sending conversationHistory:", conversationHistory);
     fetch(url, {
         method: "POST",
         headers: {
@@ -110,49 +112,61 @@ function sendChatMessage(){
         return response.json();
     })
     .then(json => {
-        displayMessage(json);
+        console.log("Claude raw response:", json);
+        let reply = json.content.find(block => block.type === "text").text;
+
+        // Add Claude's reply to history
+        conversationHistory.push({
+            role: "assistant",
+            content: reply
+        });
+
+        displayMessage(reply);
     })
 }
     
 // STEP 8f: Extract the message content from Claude's response
-function displayMessage(json){
-    console.log(json);
 
-
-    let para = document.createElement("p"); // <p></p>
-    para.textContent = json.content[0].text;
-    results.appendChild(para);
-
-    window.firstClaudeResponse = json.content[0].text;
-
-    document.querySelector("#follow-up-section").style.display = "block";
+// Updating displayMessage()
+function displayMessage(text){
+    let bubble = document.createElement("div");
+    bubble.style.background = "#f0f0f0";
+    bubble.style.padding = "10px";
+    bubble.style.margin = "10px 0";
+    bubble.style.borderRadius = "6px";
+    bubble.textContent = "Claude: " + text;
+    results.appendChild(bubble);
 }
+
+function displayUserMessage(text){
+    let bubble = document.createElement("div");
+    bubble.style.background = "#d0eaff";
+    bubble.style.padding = "10px";
+    bubble.style.margin = "10px 0";
+    bubble.style.borderRadius = "6px";
+    bubble.textContent = "You: " + text;
+    results.appendChild(bubble);
+}
+
 
 // Follow-Up Request
 function sendFollowup(){
     let followUpText = followUpMessage.value;
 
-    // Build full conversation history (3 messages)
-    let messages = [
-        {
-            role: "user",
-            content: userMessage.value
-        },
-        {
-            role: "assistant",
-            content: window.firstClaudeResponse
-        },
-        {
-            role: "user",
-            content: followUpText
-        }
-    ];
+    // Add user's follow-up to history
+    conversationHistory.push({
+        role: "user",
+        content: followUpText
+    });
+
+    displayUserMessage(followUpText);
 
     let url = `${baseURL}/api/claude/messages`;
+
     let body = {
         model: "claude-sonnet-5",
         max_tokens: maxTokens,
-        messages: messages
+        messages: conversationHistory
     };
 
     fetch(url, {
@@ -165,19 +179,28 @@ function sendFollowup(){
     })
     .then(response => response.json())
     .then(json => {
-        displayFollowup(json);
+        let reply = json.content.find(block => block.type === "text").text;
+        
+        // Add Claude's reply to history
+        conversationHistory.push({
+            role: "assistant",
+            content: reply
+        });
+
+        displayFollowup(reply);
     });
 }
 
+
 // Display follow-up response differently
-function displayFollowup(json){
+function displayFollowup(text){
     let box = document.createElement("div");
     box.style.backgroundColor = "#eef";
     box.style.padding = "10px";
     box.style.marginTop = "10px";
     box.style.borderLeft = "4px solid #66f";
 
-    box.textContent = "Clause (Follow-Up): " + json.content[0].text;
+    box.textContent = "Claude (Follow-Up): " + text;
     results.appendChild(box);
 }
 
